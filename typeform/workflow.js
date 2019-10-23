@@ -1,4 +1,4 @@
-module.exports = function*() {
+module.exports.handle = function*() {
   const typeform = this.connector("typeform", "YOUR-CONNECTOR-ID");
 
   // Retrieve forms
