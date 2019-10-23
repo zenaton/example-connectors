@@ -34,5 +34,4 @@ module.exports.handle = function*(baseId) {
     headers: { base_id: baseId },
     query: { maxRecords: 3, view: "Value by Stage" }
   });
-  console.log(records);
 };
