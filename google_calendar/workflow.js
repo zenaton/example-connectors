@@ -1,4 +1,4 @@
-module.exports = function*() {
+module.exports.handle = function*() {
   const googleCalendar = this.connector(
     "google_calendar",
     "YOUR-CONNECTOR-ID"
