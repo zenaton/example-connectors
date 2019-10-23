@@ -1,14 +1,11 @@
 module.exports.handle = function*() {
-  const googleCalendar = this.connector(
-    "google_calendar",
-    "YOUR-CONNECTOR-ID"
-  )
+  const googleCalendar = this.connector("google_calendar", "YOUR-CONNECTOR-ID");
 
   // Returns the calendars on my calendar list
-  const response = yield googleCalendar.get("/users/me/calendarList")
+  const response = yield googleCalendar.get("/users/me/calendarList");
 
   // Currently logged in calendar
-  const primaryCalendar = response.data.items.find(item => item.primary)
+  const primaryCalendar = response.data.items.find(item => item.primary);
 
   // Creates an event in my primary calendar
   const event = yield googleCalendar.post(
@@ -28,7 +25,7 @@ module.exports.handle = function*() {
         }
       }
     }
-  )
+  );
 
   // Update the event
   yield googleCalendar.patch(
@@ -41,11 +38,11 @@ module.exports.handle = function*() {
         ]
       }
     }
-  )
+  );
 
   // Delete the event and send notifications to all the attendees
   yield googleCalendar.delete(
     `calendars/${primaryCalendar.id}/events/${event.data.id}`,
     { query: { sendUpdates: "all" } }
-  )
-}
+  );
+};

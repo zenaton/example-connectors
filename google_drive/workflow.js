@@ -13,7 +13,7 @@ module.export.handle = function*() {
       name: "My first created file with Zenaton"
     }
   });
-  
+
   const fileId = response.data.id;
 
   // Update the name of the file and star it

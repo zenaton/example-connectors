@@ -1,11 +1,11 @@
 module.exports.handle = function*(channel) {
-  const slack = this.connector("slack", "YOUR-CONNECTOR-ID")
+  const slack = this.connector("slack", "YOUR-CONNECTOR-ID");
 
   if (!channel) {
     // Get the list of channels
-    const response = yield slack.get("channels.list", { query: { limit: 10 } })
+    const response = yield slack.get("channels.list", { query: { limit: 10 } });
     // for this example, take the first one
-    channel = response.data.channels[0]
+    channel = response.data.channels[0];
   }
 
   // Send a message
@@ -15,5 +15,5 @@ module.exports.handle = function*(channel) {
       as_user: true,
       channel: channel
     }
-  })
-}
+  });
+};
