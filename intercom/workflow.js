@@ -1,4 +1,4 @@
-module.exports = function*(id, email, name) {
+module.exports.handle = function*(id, email, name) {
   const intercom = this.connector("intercom", "YOUR-CONNECTOR-ID")
 
   // List users sorted by created_at DESC
