@@ -1,4 +1,4 @@
-module.exports.handle = function* () {
+module.exports.handle = function*() {
   const github = this.connector("github", "YOUR-CONNECTOR-ID");
 
   // List my public repositories
@@ -34,4 +34,4 @@ module.exports.handle = function* () {
 
   // Finally delete the gist
   yield github.delete(`/gists/${gistId}`);
-}
+};
