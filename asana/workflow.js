@@ -1,4 +1,4 @@
-module.exports = function* (task_name) {
+module.exports.handle = function* (task_name) {
   const asana = this.connector("asana", "YOUR-CONNECTOR-ID");
 
   // Get info about me
