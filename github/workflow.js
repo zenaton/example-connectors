@@ -1,4 +1,4 @@
-module.exports = function* () {
+module.exports.handle = function* () {
   const github = this.connector("github", "YOUR-CONNECTOR-ID");
 
   // List my public repositories
