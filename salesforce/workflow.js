@@ -1,4 +1,4 @@
-module.export.handle = function*() {
+module.exports.handle = function*() {
   const sf = this.connector("salesforce", "your_connector_id");
 
   yield sf.get("/data/v46.0", {headers: { salesforce_instance: "your_instance"}});
