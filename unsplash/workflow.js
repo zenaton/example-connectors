@@ -1,4 +1,4 @@
-module.exports = function* () {
+module.exports.handle = function* () {
   const unsplash = this.connector("unsplash", "YOUR-CONNECTOR-ID")
 
   // Search images
