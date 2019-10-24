@@ -1,4 +1,4 @@
-module.exports.handle = function* (from,to,subject,content) {
+module.exports.handle = function* (from, to, subject, content) {
   const sendgrid = this.connector("sendgrid", "YOUR-CONNECTOR-ID");
 
   // Send text email
