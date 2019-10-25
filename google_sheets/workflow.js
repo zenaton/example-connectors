@@ -6,8 +6,8 @@ module.exports.handle = function*(spreadsheetTitle) {
     body: { properties: { title: spreadsheetTitle } }
   });
 
-  // Add some values to the Spreadsheet
-  // Will results in:
+  // Add values to the Spreadsheet
+  // Display results:
   //     A  B
   //   |------
   // 1 | 1  2
