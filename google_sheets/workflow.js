@@ -26,4 +26,20 @@ module.exports.handle = function*(spreadsheetTitle) {
       }
     }
   );
+  
+  // Append values to the Spreadsheet
+  // Display results:
+  //     A  B
+  //   |------
+  // 1 | 1  2
+  // 2 | 3  4
+  // 3 | 5  6
+  // 4 | 7  8
+  yield google_sheets.post(`/${spreadsheet.data.spreadsheetId}/values/${range}:append?valueInputOption=RAW`, {
+    body: {
+      range: range,
+      majorDimension: "ROWS",
+      values: [[5,6], [7,8]]
+    }
+  });
 };
