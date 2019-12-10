@@ -17,12 +17,11 @@ module.exports.handle = function*(channel) {
     }
     });
     
-    // get information from channel user-signup
+  // Get the history of a channel
   const history = (yield slack.get("channels.history", { 
     query: {
       channel: "channel_id",
       oldest: "time_in_epoch",  // time has to be in Epoch (https://www.epochconverter.com/)
     }
-  })).data;
-    
+  })).data; 
 };
